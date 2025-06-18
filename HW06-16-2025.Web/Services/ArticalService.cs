@@ -4,14 +4,12 @@ namespace HW06_16_2025.Web.Services
 {
     public class ArticleService
     {
-        public class SummaryResponse
-        {
-            public string Summary (string html )
-            
+        
+            public string Summary(string u) 
             {
-                var url = GetHtml(html);
+                var x = GetHtml(u);
                 var parser = new HtmlParser();
-                var document = parser.ParseDocument(html);
+                var document = parser.ParseDocument(x);
 
 
                 foreach (var node in document.QuerySelectorAll("style, script, nav, header, footer, aside"))
@@ -49,5 +47,5 @@ namespace HW06_16_2025.Web.Services
             }
 
         }
-    }
+    
 }

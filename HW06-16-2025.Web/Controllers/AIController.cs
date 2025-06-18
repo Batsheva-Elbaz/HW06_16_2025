@@ -29,7 +29,8 @@ namespace HW06_16_2025.Web.Controllers
         public SummaryResponse Generate(URLModel request)
         {
             var service = new ArticleService();
-            var prompt = $"Write a short {request.Url} summary based on this article.";
+            string text = service.Summary(request.Url);
+            var prompt = $"Write a short summary based on this article {text}.";
 
             var ollamaRequest = new
             {
